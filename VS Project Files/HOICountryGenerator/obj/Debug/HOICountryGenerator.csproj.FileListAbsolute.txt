@@ -1,0 +1,8 @@
+c:\users\bobby\documents\visual studio 2015\Projects\HOICountryGenerator\HOICountryGenerator\bin\Debug\HOICountryGenerator.exe.config
+c:\users\bobby\documents\visual studio 2015\Projects\HOICountryGenerator\HOICountryGenerator\bin\Debug\HOICountryGenerator.exe
+c:\users\bobby\documents\visual studio 2015\Projects\HOICountryGenerator\HOICountryGenerator\bin\Debug\HOICountryGenerator.pdb
+c:\users\bobby\documents\visual studio 2015\Projects\HOICountryGenerator\HOICountryGenerator\obj\Debug\HOICountryGenerator.Form1.resources
+c:\users\bobby\documents\visual studio 2015\Projects\HOICountryGenerator\HOICountryGenerator\obj\Debug\HOICountryGenerator.Properties.Resources.resources
+c:\users\bobby\documents\visual studio 2015\Projects\HOICountryGenerator\HOICountryGenerator\obj\Debug\HOICountryGenerator.csproj.GenerateResource.Cache
+c:\users\bobby\documents\visual studio 2015\Projects\HOICountryGenerator\HOICountryGenerator\obj\Debug\HOICountryGenerator.exe
+c:\users\bobby\documents\visual studio 2015\Projects\HOICountryGenerator\HOICountryGenerator\obj\Debug\HOICountryGenerator.pdb
