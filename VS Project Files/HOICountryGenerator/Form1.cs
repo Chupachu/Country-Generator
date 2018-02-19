@@ -53,7 +53,10 @@ namespace HOICountryGenerator
                 if (line.Split('|').Length == 2)
                 {
                     ideologies.Add(line.Split('|')[0]);
-                    ideologyNames.Add(line.Split('|')[1]);
+                    if(line!=lines.Last())
+                        ideologyNames.Add(line.Split('|')[1].Remove(line.Split('|')[1].Length-1,1));
+                    else
+                        ideologyNames.Add(line.Split('|')[1]);
                     int amtPerIde = (100 / (lines.Length));
                     tpop += amtPerIde;
                     idePop.Add("" + amtPerIde);
@@ -74,6 +77,7 @@ namespace HOICountryGenerator
                 string tempname;
                 tempname = name.Replace("[NAME]", countryName);
                 tempname = tempname.Replace("[ADJ]", countryAdjective);
+                tempname.Replace("\n", "");
                 _idenames.Add(tempname);
             }
             ideologyNames = _idenames;
@@ -108,11 +112,11 @@ namespace HOICountryGenerator
                 lines += " "+countryTag;
                 lines += "_" + ideology + ":0 ";
                 lines += '\u0022';
-                if (ind != ideologies.Count - 1)
-                    lines += ideologyNames[ind].Remove(ideologyNames[ind].Length - 1, 1);
-                else
+                //if (ind != ideologies.Count - 1)
+                    //lines += ideologyNames[ind].Remove(ideologyNames[ind].Length - 1, 1);
+                //else
                     lines += ideologyNames[ind];
-                lines += "\"";
+                lines += '\u0022';
                 lines += "\n";
                 //lines += '\n';
                 //FLAG SECTION
