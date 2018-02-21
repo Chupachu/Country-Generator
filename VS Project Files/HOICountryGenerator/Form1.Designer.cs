@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.TB_Tag = new System.Windows.Forms.TextBox();
             this.lbl_tag = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
@@ -101,6 +101,7 @@
             this.TB_Loc = new System.Windows.Forms.TextBox();
             this.BTN_Loc = new System.Windows.Forms.Button();
             this.OFD_Loc = new System.Windows.Forms.OpenFileDialog();
+            this.BTN_Update = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -314,17 +315,17 @@
             this.chart1.BorderlineWidth = 0;
             this.chart1.BorderSkin.BackColor = System.Drawing.Color.Transparent;
             this.chart1.BorderSkin.PageColor = System.Drawing.Color.Transparent;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(469, 308);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(499, 199);
             this.chart1.TabIndex = 21;
             this.chart1.TabStop = false;
@@ -765,11 +766,22 @@
             this.OFD_Loc.FileName = "openFileDialog1";
             this.OFD_Loc.FileOk += new System.ComponentModel.CancelEventHandler(this.OFD_Loc_FileOk);
             // 
+            // BTN_Update
+            // 
+            this.BTN_Update.Location = new System.Drawing.Point(893, 12);
+            this.BTN_Update.Name = "BTN_Update";
+            this.BTN_Update.Size = new System.Drawing.Size(75, 23);
+            this.BTN_Update.TabIndex = 63;
+            this.BTN_Update.Text = "Update";
+            this.BTN_Update.UseVisualStyleBackColor = true;
+            this.BTN_Update.Click += new System.EventHandler(this.BTN_Update_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(980, 519);
+            this.Controls.Add(this.BTN_Update);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.LBL_Loc);
             this.Controls.Add(this.TB_Loc);
@@ -913,6 +925,7 @@
         private System.Windows.Forms.TextBox TB_Loc;
         private System.Windows.Forms.Button BTN_Loc;
         private System.Windows.Forms.OpenFileDialog OFD_Loc;
+        private System.Windows.Forms.Button BTN_Update;
     }
 }
 

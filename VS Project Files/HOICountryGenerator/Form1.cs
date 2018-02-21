@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Net;
 namespace HOICountryGenerator
 {
     public partial class Form1 : Form
@@ -30,6 +31,7 @@ namespace HOICountryGenerator
         {
             InitializeComponent();
         }
+        
         public void SplitIdeStrings()
         {
             int tpop = 0;
@@ -346,6 +348,14 @@ namespace HOICountryGenerator
             colorR = "150";
             colorG = "150";
             colorB = "150";
+            if (NewerVersion())
+            {
+                BTN_Update.Enabled = true;
+            }
+            else
+            {
+                BTN_Update.Enabled = false;
+            }
         }
 
         private void chart1_Click(object sender, EventArgs e)
@@ -589,6 +599,46 @@ namespace HOICountryGenerator
         private void button9_Click(object sender, EventArgs e)
         {
             Help("Localization Help", "This field is the location where country names can be found.  For example, in countries_l_english.yml, you would find GER_fascism:0 \"German Reich\".");
+        }
+
+        private void BTN_Update_Click(object sender, EventArgs e)
+        {
+            
+            UpdateScript();
+        }
+        public bool NewerVersion()
+        {
+            bool newer = false;
+            string version1 = File.ReadAllText("version.txt");
+            //MessageBox.Show(version1);
+            string[] ver1Split = version1.Split('.');
+            string version2 = new StreamReader(new WebClient().OpenRead("https://raw.githubusercontent.com/Chupachu/Country-Generator/master/CountryGenerator/version.txt")).ReadToEnd();
+            //MessageBox.Show(version2);
+            string[] ver2Split = version2.Split('.');
+            for (int v = ver1Split.Length-1; v > 0; v--)
+            {
+                int num1;
+                int num2;
+                int.TryParse(ver1Split[v], out num1);
+                int.TryParse(ver2Split[v], out num2);
+                if (num1 < num2)
+                {
+                    newer = true;
+                }
+                if (num1 > num2)
+                {
+                    newer = false;
+                }
+            }
+            return newer;
+        }
+        public void UpdateScript()
+        {
+            //MessageBox.Show(Application.ProductVersion);
+            new WebClient().DownloadFile("https://raw.githubusercontent.com/Chupachu/Country-Generator/master/CountryGenerator/updater.vbs", "updater.vbs");
+            new WebClient().DownloadFile("https://raw.githubusercontent.com/Chupachu/Country-Generator/master/CountryGenerator/version.txt", "version.txt");
+            System.Diagnostics.Process.Start("updater.vbs");
+            Application.Exit();
         }
     }
 }

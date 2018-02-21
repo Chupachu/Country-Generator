@@ -1,4 +1,4 @@
-wscript.sleep(2500)
+wscript.sleep(3000)
 strFileURL = "https://github.com/Chupachu/Country-Generator/blob/master/CountryGenerator/HOICountryGenerator.exe?raw=true"
     strHDLocation = "HOICountryGenerator.exe"
 
