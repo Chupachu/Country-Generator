@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.TB_Tag = new System.Windows.Forms.TextBox();
             this.lbl_tag = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
@@ -102,6 +102,9 @@
             this.BTN_Loc = new System.Windows.Forms.Button();
             this.OFD_Loc = new System.Windows.Forms.OpenFileDialog();
             this.BTN_Update = new System.Windows.Forms.Button();
+            this.LBL_Version = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.CB_ForceUpdate = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -315,17 +318,17 @@
             this.chart1.BorderlineWidth = 0;
             this.chart1.BorderSkin.BackColor = System.Drawing.Color.Transparent;
             this.chart1.BorderSkin.PageColor = System.Drawing.Color.Transparent;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea8.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.chart1.Legends.Add(legend8);
             this.chart1.Location = new System.Drawing.Point(469, 308);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.chart1.Series.Add(series8);
             this.chart1.Size = new System.Drawing.Size(499, 199);
             this.chart1.TabIndex = 21;
             this.chart1.TabStop = false;
@@ -768,7 +771,7 @@
             // 
             // BTN_Update
             // 
-            this.BTN_Update.Location = new System.Drawing.Point(893, 12);
+            this.BTN_Update.Location = new System.Drawing.Point(386, 489);
             this.BTN_Update.Name = "BTN_Update";
             this.BTN_Update.Size = new System.Drawing.Size(75, 23);
             this.BTN_Update.TabIndex = 63;
@@ -776,11 +779,36 @@
             this.BTN_Update.UseVisualStyleBackColor = true;
             this.BTN_Update.Click += new System.EventHandler(this.BTN_Update_Click);
             // 
+            // LBL_Version
+            // 
+            this.LBL_Version.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LBL_Version.AutoSize = true;
+            this.LBL_Version.Location = new System.Drawing.Point(242, 494);
+            this.LBL_Version.Name = "LBL_Version";
+            this.LBL_Version.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.LBL_Version.Size = new System.Drawing.Size(138, 13);
+            this.LBL_Version.TabIndex = 64;
+            this.LBL_Version.Text = "Version: (0.0.0.0) (outdated)";
+            this.LBL_Version.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // CB_ForceUpdate
+            // 
+            this.CB_ForceUpdate.AutoSize = true;
+            this.CB_ForceUpdate.Location = new System.Drawing.Point(370, 466);
+            this.CB_ForceUpdate.Name = "CB_ForceUpdate";
+            this.CB_ForceUpdate.Size = new System.Drawing.Size(91, 17);
+            this.CB_ForceUpdate.TabIndex = 65;
+            this.CB_ForceUpdate.Text = "Force Update";
+            this.CB_ForceUpdate.UseVisualStyleBackColor = true;
+            this.CB_ForceUpdate.CheckedChanged += new System.EventHandler(this.CB_ForceUpdate_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(980, 519);
+            this.Controls.Add(this.CB_ForceUpdate);
+            this.Controls.Add(this.LBL_Version);
             this.Controls.Add(this.BTN_Update);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.LBL_Loc);
@@ -926,6 +954,9 @@
         private System.Windows.Forms.Button BTN_Loc;
         private System.Windows.Forms.OpenFileDialog OFD_Loc;
         private System.Windows.Forms.Button BTN_Update;
+        private System.Windows.Forms.Label LBL_Version;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.CheckBox CB_ForceUpdate;
     }
 }
 

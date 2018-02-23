@@ -27,6 +27,7 @@ namespace HOICountryGenerator
         public string colorR;
         public string colorG;
         public string colorB;
+        public bool versionNag = true;
         public Form1()
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace HOICountryGenerator
         
         public void SplitIdeStrings(bool resetVals)
         {
-
+            
             int tpop = 0;
             if (ideologyDir == ""|ideologyDir == null)
                 return;
@@ -644,8 +645,13 @@ namespace HOICountryGenerator
                     newer = false;
                 }
             }
-            if (newer)
+            if(!newer)
+                LBL_Version.Text = "Version: " + version1 + " (latest)";
+            else
+                LBL_Version.Text = "Version: " + version1 + " (outdated)";
+            if (newer&&versionNag==true)
             {
+                versionNag = false;
                 System.Threading.Timer timer = null;
                 timer = new System.Threading.Timer((obj) => { MessageBox.Show("(Version: "+version1+") There's a new version available: " + version2,"Update Available"); timer.Dispose(); }, null, 500, System.Threading.Timeout.Infinite);
             }
@@ -682,6 +688,23 @@ namespace HOICountryGenerator
                 File.Delete("changelog.txt");
             }
         }
+
+        private void CB_ForceUpdate_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CB_ForceUpdate.Checked)
+            {
+                BTN_Update.Enabled = true;
+            }
+            else
+            {
+                if (!NewerVersion())
+                {
+                    BTN_Update.Enabled = false;
+                }
+            }
+        }
+
+
         //public string ParseChangelogText(string text)
         //{
         //    text = text.Replace("\\\\", "\n");
