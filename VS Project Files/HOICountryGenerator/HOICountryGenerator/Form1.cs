@@ -32,8 +32,9 @@ namespace HOICountryGenerator
             InitializeComponent();
         }
         
-        public void SplitIdeStrings()
+        public void SplitIdeStrings(bool resetVals)
         {
+
             int tpop = 0;
             if (ideologyDir == ""|ideologyDir == null)
                 return;
@@ -42,7 +43,8 @@ namespace HOICountryGenerator
             ideologyNames.Clear();
             ideologies.Clear();
             string[] lines = ideTxt.Split('\n');
-            idePop.Clear();
+            if (resetVals)
+                idePop.Clear();
             List<string> _lines = new List<string>();
             foreach (string line in lines)
             {
@@ -59,12 +61,16 @@ namespace HOICountryGenerator
                         ideologyNames.Add(line.Split('|')[1].Remove(line.Split('|')[1].Length-1,1));
                     else
                         ideologyNames.Add(line.Split('|')[1]);
-                    int amtPerIde = (100 / (lines.Length));
-                    tpop += amtPerIde;
-                    idePop.Add("" + amtPerIde);
+                    if (resetVals)
+                    {
+                        int amtPerIde = (100 / (lines.Length));
+                        tpop += amtPerIde;
+                        idePop.Add("" + amtPerIde);
+                    }
                     miniIdeCount += 1;
                 }
             }
+
             if(miniIdeCount==0)
             {
                 MessageBox.Show("ERROR: Ideology file submitted contains no ideologies.  Verify you selected the right file and that it separates ideology from localization with a | symbol.","Invalid Ideology File");
@@ -72,7 +78,8 @@ namespace HOICountryGenerator
                 TB_Ideologies.Text = "";
                 return;
             }
-            LBL_Tpop.Text = "Total popularity: " + tpop;
+            if(resetVals)
+                LBL_Tpop.Text = "Total popularity: " + tpop;
             List<string> _idenames = new List<string>();
             foreach (string name in ideologyNames)
             {
@@ -89,6 +96,10 @@ namespace HOICountryGenerator
             }
             CB_Rulingparty.SelectedIndex = 0;
             rulingParty = ideologies[CB_Rulingparty.SelectedIndex];
+        }
+        public void IdeNames()
+        {
+
         }
         void CheckToUnlockIde()
         {
@@ -236,7 +247,7 @@ namespace HOICountryGenerator
             CB_Rulingparty.Enabled = true;
             TB_Locname.Enabled = true;
             BTN_Resetloc.Enabled = true;
-            SplitIdeStrings();
+            SplitIdeStrings(true);
         }
 
         private void BTN_Flag_Click(object sender, EventArgs e)
@@ -312,7 +323,7 @@ namespace HOICountryGenerator
             countryTag = TB_Tag.Text;
             if (OFD_Ideologies.CheckFileExists)
             {
-                SplitIdeStrings();
+                SplitIdeStrings(false);
             }
         }
 
@@ -322,7 +333,7 @@ namespace HOICountryGenerator
             countryName = TB_Name.Text;
             if (OFD_Ideologies.CheckFileExists)
             {
-                SplitIdeStrings();
+                SplitIdeStrings(false);
             }
         }
 
@@ -332,14 +343,14 @@ namespace HOICountryGenerator
             countryAdjective = TB_Adj.Text;
             if (OFD_Ideologies.CheckFileExists)
             {
-                SplitIdeStrings();
+                SplitIdeStrings(false);
             }
         }
 
         private void BTN_Resetloc_Click(object sender, EventArgs e)
         {
             ideologies.Clear();
-            SplitIdeStrings();
+            SplitIdeStrings(true);
             TB_Locname.Text = ideologyNames[CB_Rulingparty.SelectedIndex];
         }
 
@@ -348,6 +359,9 @@ namespace HOICountryGenerator
             colorR = "150";
             colorG = "150";
             colorB = "150";
+            System.Threading.Timer timer = null;
+            timer = new System.Threading.Timer((obj) => {Changelog();timer.Dispose();},null, 500, System.Threading.Timeout.Infinite);
+            
             if (NewerVersion())
             {
                 BTN_Update.Enabled = true;
@@ -630,15 +644,48 @@ namespace HOICountryGenerator
                     newer = false;
                 }
             }
+            if (newer)
+            {
+                System.Threading.Timer timer = null;
+                timer = new System.Threading.Timer((obj) => { MessageBox.Show("(Version: "+version1+") There's a new version available: " + version2,"Update Available"); timer.Dispose(); }, null, 500, System.Threading.Timeout.Infinite);
+            }
+            
+            //Console.Write();
             return newer;
         }
         public void UpdateScript()
         {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
+        | SecurityProtocolType.Tls11
+        | SecurityProtocolType.Tls12
+        | SecurityProtocolType.Ssl3;
             //MessageBox.Show(Application.ProductVersion);
-            new WebClient().DownloadFile("https://raw.githubusercontent.com/Chupachu/Country-Generator/master/CountryGenerator/updater.vbs", "updater.vbs");
-            new WebClient().DownloadFile("https://raw.githubusercontent.com/Chupachu/Country-Generator/master/CountryGenerator/version.txt", "version.txt");
-            System.Diagnostics.Process.Start("updater.vbs");
+            Download("https://github.com/Chupachu/Country-Generator/blob/master/CountryGenerator/HOICountryGenerator.exe?raw=true", "HOICountryGenerator_Backup.exe");
+            Download("https://github.com/Chupachu/Country-Generator/blob/master/CountryGenerator/HCG_Updater.exe?raw=true", "HCG_Updater.exe");
+            //Download("https://raw.githubusercontent.com/Chupachu/Country-Generator/master/CountryGenerator/version.txt", "version.txt");
+            //Download("https://raw.githubusercontent.com/Chupachu/Country-Generator/master/CountryGenerator/changelog.txt", "changelog.txt");
+            System.Diagnostics.Process.Start("HCG_Updater.exe");
             Application.Exit();
         }
+        public void Download(string path, string name)
+        {
+            new WebClient().DownloadFile(path, name);
+        }
+        public void Changelog()
+        {
+            if (File.Exists("changelog.txt"))
+            {
+                string changelogtext = File.ReadAllText("changelog.txt");
+                string title = File.ReadAllText("changelog.txt").Split('\n')[0];
+                changelogtext=changelogtext.Replace(title + '\n', "");
+                MessageBox.Show(changelogtext, title);
+                File.Delete("changelog.txt");
+            }
+        }
+        //public string ParseChangelogText(string text)
+        //{
+        //    text = text.Replace("\\\\", "\n");
+        //    return text;
+        //}
     }
 }

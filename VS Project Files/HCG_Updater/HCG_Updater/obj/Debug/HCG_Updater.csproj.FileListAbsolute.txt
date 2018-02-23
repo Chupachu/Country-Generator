@@ -1,0 +1,8 @@
+c:\users\bobby\documents\visual studio 2015\Projects\HCG_Updater\HCG_Updater\bin\Debug\HCG_Updater.exe.config
+c:\users\bobby\documents\visual studio 2015\Projects\HCG_Updater\HCG_Updater\bin\Debug\HCG_Updater.exe
+c:\users\bobby\documents\visual studio 2015\Projects\HCG_Updater\HCG_Updater\bin\Debug\HCG_Updater.pdb
+c:\users\bobby\documents\visual studio 2015\Projects\HCG_Updater\HCG_Updater\obj\Debug\HCG_Updater.Form1.resources
+c:\users\bobby\documents\visual studio 2015\Projects\HCG_Updater\HCG_Updater\obj\Debug\HCG_Updater.Properties.Resources.resources
+c:\users\bobby\documents\visual studio 2015\Projects\HCG_Updater\HCG_Updater\obj\Debug\HCG_Updater.csproj.GenerateResource.Cache
+c:\users\bobby\documents\visual studio 2015\Projects\HCG_Updater\HCG_Updater\obj\Debug\HCG_Updater.exe
+c:\users\bobby\documents\visual studio 2015\Projects\HCG_Updater\HCG_Updater\obj\Debug\HCG_Updater.pdb
