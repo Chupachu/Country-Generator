@@ -1,9 +1,4 @@
-Changelog 1
-Welcome to the first ever changelog!
+Changelog 2
+I've been having a lot of issues with the updater script that I made, so I decided I'd rather just replace it and create a back-and-forth swap between programs.  This would work much better, especially since I recently discovered that the .vbs script was being detected by windows defender as malware.  If you look at the actual code for the updater script, you can see for yourself that this is false.  However, I guess Windows Defender can't tell the difference between a downloader and a trojan, which is pretty annoying.  If you still have the updater.vbs script after this update, it'll pretty much just be vestigial and after I send out a second update (just to make sure), feel free to delete it.
 
-I've updated the Country Generator to include changelogs along with the newest versions!  Once a changelog has been read, it will be immediately deleted.  The changelog will be downloaded automatically whenever a new version is released, and you will only see it once per download.
-
-Along with just adding a changelog, I've also refined the updating process and fixed a bug that would reset ideology values when the nation's name was changed.
-
-
-I hope you enjoy these changes!
+This fix should make the stability and OS flexibility of this mod increase slightly, since the move from older scripts should allow newer users to have an easier time should something go wrong.  I hope you enjoy this fix, and I hope it didn't cause you any issues in the transferral.
