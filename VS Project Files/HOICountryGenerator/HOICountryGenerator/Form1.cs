@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Net;
+//using DevIL;
 namespace HOICountryGenerator
 {
     public partial class Form1 : Form
@@ -132,6 +133,20 @@ namespace HOICountryGenerator
                     lines += ideologyNames[ind];
                 lines += '\u0022';
                 lines += "\n";
+
+                lines += " " + countryTag;
+                lines += "_" + ideology + "_DEF:0 ";
+                lines += '\u0022';
+                lines += ideologyNames[ind];
+                lines += '\u0022';
+                lines += "\n";
+                lines += " " + countryTag;
+                lines += "_" + ideology + "_ADJ:0 ";
+                lines += '\u0022';
+                lines += countryAdjective;
+                lines += '\u0022';
+                lines += "\n";
+
                 //lines += '\n';
                 //FLAG SECTION
                 string _dir;
@@ -507,17 +522,30 @@ namespace HOICountryGenerator
         {
             Help("Mod Folder Help", "Speficying this isn't important, but it makes searching for files much quicker.");
         }
-
+        void DDSToPNG(string path)
+        {
+            //byte[] bytes = File.ReadAllBytes(path);
+            //PB_Logo.Image = DevIL.DevIL.LoadBitmap(path);
+            //MessageBox.Show(bytes.ToString());
+            
+        }
         private void BTN_Modfolder_Click(object sender, EventArgs e)
         {
+            
             //MessageBox.Show(FBD_Modfolder.SelectedPath);
             //FBD_Modfolder.SelectedPath = "C:/Users/" + Environment.UserName + "/Documents/Paradox Interactive/Hearts of Iron IV/mod";
             //MessageBox.Show(FBD_Modfolder.SelectedPath);
             if (FBD_Modfolder.ShowDialog().ToString() == "OK")
             {
+
                 string modloc = FBD_Modfolder.SelectedPath;
                 TB_Modfolder.Text = FBD_Modfolder.SelectedPath.ToString();
-
+                if (File.Exists(modloc+ "/gfx/interface/logo_game.dds"))
+                {
+                    //MessageBox.Show("I found the logo!");
+                    //PB_Logo.Image = DevIL.DevIL.LoadBitmap(modloc+ "/gfx/interface/logo_game.dds");
+                    //DDSToPNG(modloc + "/gfx/interface/logo_game.dds");
+                }
                 if (Directory.Exists(modloc + "/history/countries")) {
                     MessageBox.Show("history/countries detected", "File autodetect");
                     FBD_History.SelectedPath = modloc + "/history/countries";

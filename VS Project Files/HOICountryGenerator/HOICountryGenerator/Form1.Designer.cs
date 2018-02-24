@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.TB_Tag = new System.Windows.Forms.TextBox();
             this.lbl_tag = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
@@ -105,7 +105,9 @@
             this.LBL_Version = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.CB_ForceUpdate = new System.Windows.Forms.CheckBox();
+            this.PB_Logo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // TB_Tag
@@ -318,17 +320,17 @@
             this.chart1.BorderlineWidth = 0;
             this.chart1.BorderSkin.BackColor = System.Drawing.Color.Transparent;
             this.chart1.BorderSkin.PageColor = System.Drawing.Color.Transparent;
-            chartArea8.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.chart1.Legends.Add(legend8);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(469, 308);
             this.chart1.Name = "chart1";
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chart1.Series.Add(series8);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(499, 199);
             this.chart1.TabIndex = 21;
             this.chart1.TabStop = false;
@@ -802,11 +804,21 @@
             this.CB_ForceUpdate.UseVisualStyleBackColor = true;
             this.CB_ForceUpdate.CheckedChanged += new System.EventHandler(this.CB_ForceUpdate_CheckedChanged);
             // 
+            // PB_Logo
+            // 
+            this.PB_Logo.Location = new System.Drawing.Point(775, 19);
+            this.PB_Logo.Name = "PB_Logo";
+            this.PB_Logo.Size = new System.Drawing.Size(193, 102);
+            this.PB_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PB_Logo.TabIndex = 66;
+            this.PB_Logo.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(980, 519);
+            this.Controls.Add(this.PB_Logo);
             this.Controls.Add(this.CB_ForceUpdate);
             this.Controls.Add(this.LBL_Version);
             this.Controls.Add(this.BTN_Update);
@@ -876,6 +888,7 @@
             this.Text = "HOI Country Generator";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -957,6 +970,7 @@
         private System.Windows.Forms.Label LBL_Version;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.CheckBox CB_ForceUpdate;
+        private System.Windows.Forms.PictureBox PB_Logo;
     }
 }
 
