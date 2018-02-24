@@ -1,11 +1,2 @@
-Changelog 5
-This patch was pretty small, I simply allowed the user the ability to 'force update' if they weren't 10000000% sure they had the latest version.  I also added a label that tells the version and whether or not it's outdated.
-
-I also REMEMBERED TO UPLOAD THE VISUAL STUDIO FILES AT THE SAME TIME
-
-Sorry for forgetting to do that.
-
-Hope this update makes the program more convenient & user-friendly.  This update is a lot less urgent so this changelog should be an accurate idea of how much writing would usually be in one.
-
-
-Enjoy!
+Changelog 6
+Fixed an issue where the localization wouldn't generate _DEF and _ADJ definitions.
