@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using System.IO;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Net;
+using System.Drawing.Imaging;
+using KUtility;
+
 //using DevIL;
 namespace HOICountryGenerator
 {
@@ -540,11 +543,10 @@ namespace HOICountryGenerator
 
                 string modloc = FBD_Modfolder.SelectedPath;
                 TB_Modfolder.Text = FBD_Modfolder.SelectedPath.ToString();
-                if (File.Exists(modloc+ "/gfx/interface/logo_game.dds"))
+                string picloc = modloc + "/gfx/interface/logo_game.dds";
+                if (File.Exists(picloc))
                 {
-                    //MessageBox.Show("I found the logo!");
-                    //PB_Logo.Image = DevIL.DevIL.LoadBitmap(modloc+ "/gfx/interface/logo_game.dds");
-                    //DDSToPNG(modloc + "/gfx/interface/logo_game.dds");
+
                 }
                 if (Directory.Exists(modloc + "/history/countries")) {
                     MessageBox.Show("history/countries detected", "File autodetect");
