@@ -6,3 +6,23 @@ c:\users\bobby\documents\visual studio 2015\Projects\HOICountryGenerator\HOICoun
 c:\users\bobby\documents\visual studio 2015\Projects\HOICountryGenerator\HOICountryGenerator\obj\Debug\HOICountryGenerator.csproj.GenerateResource.Cache
 c:\users\bobby\documents\visual studio 2015\Projects\HOICountryGenerator\HOICountryGenerator\obj\Debug\HOICountryGenerator.exe
 c:\users\bobby\documents\visual studio 2015\Projects\HOICountryGenerator\HOICountryGenerator\obj\Debug\HOICountryGenerator.pdb
+E:\Users\Chris\Documents\GitHub\Country-Generator\VS Project Files\HOICountryGenerator\HOICountryGenerator\bin\Debug\HOICountryGenerator.exe.config
+E:\Users\Chris\Documents\GitHub\Country-Generator\VS Project Files\HOICountryGenerator\HOICountryGenerator\bin\Debug\HOICountryGenerator.exe
+E:\Users\Chris\Documents\GitHub\Country-Generator\VS Project Files\HOICountryGenerator\HOICountryGenerator\bin\Debug\HOICountryGenerator.pdb
+E:\Users\Chris\Documents\GitHub\Country-Generator\VS Project Files\HOICountryGenerator\HOICountryGenerator\obj\Debug\HOICountryGenerator.csprojAssemblyReference.cache
+E:\Users\Chris\Documents\GitHub\Country-Generator\VS Project Files\HOICountryGenerator\HOICountryGenerator\obj\Debug\HOICountryGenerator.Form1.resources
+E:\Users\Chris\Documents\GitHub\Country-Generator\VS Project Files\HOICountryGenerator\HOICountryGenerator\obj\Debug\HOICountryGenerator.Properties.Resources.resources
+E:\Users\Chris\Documents\GitHub\Country-Generator\VS Project Files\HOICountryGenerator\HOICountryGenerator\obj\Debug\HOICountryGenerator.csproj.GenerateResource.cache
+E:\Users\Chris\Documents\GitHub\Country-Generator\VS Project Files\HOICountryGenerator\HOICountryGenerator\obj\Debug\HOICountryGenerator.csproj.CoreCompileInputs.cache
+E:\Users\Chris\Documents\GitHub\Country-Generator\VS Project Files\HOICountryGenerator\HOICountryGenerator\obj\Debug\HOICountryGenerator.exe
+E:\Users\Chris\Documents\GitHub\Country-Generator\VS Project Files\HOICountryGenerator\HOICountryGenerator\obj\Debug\HOICountryGenerator.pdb
+C:\Users\Chris\Desktop\CountryGenerator\VS\HOICountryGenerator\HOICountryGenerator\obj\Debug\HOICountryGenerator.Form1.resources
+C:\Users\Chris\Desktop\CountryGenerator\VS\HOICountryGenerator\HOICountryGenerator\obj\Debug\HOICountryGenerator.Properties.Resources.resources
+C:\Users\Chris\Desktop\CountryGenerator\VS\HOICountryGenerator\HOICountryGenerator\obj\Debug\HOICountryGenerator.csproj.GenerateResource.cache
+C:\Users\Chris\Desktop\CountryGenerator\VS\HOICountryGenerator\HOICountryGenerator\obj\Debug\HOICountryGenerator.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Desktop\CountryGenerator\VS\HOICountryGenerator\HOICountryGenerator\obj\Debug\HOICountryGenerator.exe
+C:\Users\Chris\Desktop\CountryGenerator\VS\HOICountryGenerator\HOICountryGenerator\obj\Debug\HOICountryGenerator.pdb
+C:\Users\Chris\Desktop\CountryGenerator\VS\HOICountryGenerator\HOICountryGenerator\bin\Debug\HOICountryGenerator.exe.config
+C:\Users\Chris\Desktop\CountryGenerator\VS\HOICountryGenerator\HOICountryGenerator\bin\Debug\HOICountryGenerator.exe
+C:\Users\Chris\Desktop\CountryGenerator\VS\HOICountryGenerator\HOICountryGenerator\bin\Debug\HOICountryGenerator.pdb
+C:\Users\Chris\Desktop\CountryGenerator\VS\HOICountryGenerator\HOICountryGenerator\obj\Debug\HOICountryGenerator.csprojAssemblyReference.cache

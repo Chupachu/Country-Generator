@@ -1,2 +1,13 @@
-Changelog 6
-Fixed an issue where the localization wouldn't generate _DEF and _ADJ definitions.
+Changelog 7
+Fixes: 
+
+• Strange results from parsing newlines from differing file structures
+(Thanks to SkylarWeston for discovering and help resolving this issue)
+• Default history file updated to work with most recent expansion
+
+
+Additions:
+
+• Modular history files supported for overhaul mods 
+(defaults to GENERIC which is overwritten each update)
+• Color-coded buttons when a field has not been filled in

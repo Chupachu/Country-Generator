@@ -61,11 +61,11 @@ set_technology = {
 
 set_convoys = 10
 
-set_popularities = {
-	[PARTIES]
-}
-
 set_politics = {
+
+	parties = {
+[PARTIES]
+	}
 	
 	ruling_party = [RULINGPARTY]
 	last_election = "1936.1.1"

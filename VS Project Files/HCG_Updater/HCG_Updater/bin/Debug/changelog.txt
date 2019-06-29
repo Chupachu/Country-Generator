@@ -1,9 +1,0 @@
-Changelog 1
-Welcome to the first ever changelog!
-
-I've updated the Country Generator to include changelogs along with the newest versions!  Once a changelog has been read, it will be immediately deleted.  The changelog will be downloaded automatically whenever a new version is released, and you will only see it once per download.
-
-Along with just adding a changelog, I've also refined the updating process and fixed a bug that would reset ideology values when the nation's name was changed.
-
-
-I hope you enjoy these changes!

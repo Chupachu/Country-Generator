@@ -6,3 +6,13 @@ c:\users\bobby\documents\visual studio 2015\Projects\HCG_Updater\HCG_Updater\obj
 c:\users\bobby\documents\visual studio 2015\Projects\HCG_Updater\HCG_Updater\obj\Debug\HCG_Updater.csproj.GenerateResource.Cache
 c:\users\bobby\documents\visual studio 2015\Projects\HCG_Updater\HCG_Updater\obj\Debug\HCG_Updater.exe
 c:\users\bobby\documents\visual studio 2015\Projects\HCG_Updater\HCG_Updater\obj\Debug\HCG_Updater.pdb
+C:\Users\Chris\Desktop\CountryGenerator\VS\HCG_Updater\HCG_Updater\bin\Debug\HCG_Updater.exe.config
+C:\Users\Chris\Desktop\CountryGenerator\VS\HCG_Updater\HCG_Updater\bin\Debug\HCG_Updater.exe
+C:\Users\Chris\Desktop\CountryGenerator\VS\HCG_Updater\HCG_Updater\bin\Debug\HCG_Updater.pdb
+C:\Users\Chris\Desktop\CountryGenerator\VS\HCG_Updater\HCG_Updater\obj\Debug\HCG_Updater.csprojAssemblyReference.cache
+C:\Users\Chris\Desktop\CountryGenerator\VS\HCG_Updater\HCG_Updater\obj\Debug\HCG_Updater.Form1.resources
+C:\Users\Chris\Desktop\CountryGenerator\VS\HCG_Updater\HCG_Updater\obj\Debug\HCG_Updater.Properties.Resources.resources
+C:\Users\Chris\Desktop\CountryGenerator\VS\HCG_Updater\HCG_Updater\obj\Debug\HCG_Updater.csproj.GenerateResource.cache
+C:\Users\Chris\Desktop\CountryGenerator\VS\HCG_Updater\HCG_Updater\obj\Debug\HCG_Updater.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Desktop\CountryGenerator\VS\HCG_Updater\HCG_Updater\obj\Debug\HCG_Updater.exe
+C:\Users\Chris\Desktop\CountryGenerator\VS\HCG_Updater\HCG_Updater\obj\Debug\HCG_Updater.pdb

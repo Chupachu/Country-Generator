@@ -1,25 +1,19 @@
-democratic|Republic of [NAME]
-communism|People's Republic of [NAME]
-fascism|[ADJ] Empire
-nationalism|[ADJ] Empire
-monarchism|Kingdom of [NAME]
-neutrality|[NAME]
-islamism|[ADJ] Caliphate
-radical_shiaism|[ADJ] Caliphate
+conservative|[NAME]
+Liberal_Conservatism|[NAME]
+Christian_Democratic|[NAME]
+socialist|[NAME]
 Social_Democratic|[NAME]
 Social_Liberalism|[NAME]
-Libertarian|[NAME]
-Salafism|[ADJ] Caliphate
-Christianism|[NAME]
-Liberal_Conservatism|Republic of [NAME]
-Judaism|[NAME]
-Republicanism|[NAME]
-conservative|[NAME]
-Christian_Democratic|[NAME]
-socialist|People's Republic of [NAME]
-American_Democratic|[NAME]
+democratic|[NAME]
 centrist|[NAME]
 liberal|[NAME]
-trotskyism|People's Republic of [NAME]
-maoism|People's Republic of [NAME]
-National_Socialism|[ADJ] Empire
+communism|[ADJ] Commune
+trotskyism|[NAME]
+maoism|[NAME]
+fascism|[ADJ] Empire
+nationalism|[NAME]
+monarchism|Kingdom of [NAME]
+neutrality |[NAME]
+islamism|[NAME]
+radical_shiaism|[NAME]
+Salafism|[NAME]

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.TB_Tag = new System.Windows.Forms.TextBox();
             this.lbl_tag = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
@@ -106,13 +106,18 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.CB_ForceUpdate = new System.Windows.Forms.CheckBox();
             this.PB_Logo = new System.Windows.Forms.PictureBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.LBL_HistoryFile = new System.Windows.Forms.Label();
+            this.TB_HistoryFile = new System.Windows.Forms.TextBox();
+            this.BTN_HistoryFile = new System.Windows.Forms.Button();
+            this.OFD_HistoryFile = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // TB_Tag
             // 
-            this.TB_Tag.Location = new System.Drawing.Point(77, 6);
+            this.TB_Tag.Location = new System.Drawing.Point(80, 8);
             this.TB_Tag.MaxLength = 5;
             this.TB_Tag.Name = "TB_Tag";
             this.TB_Tag.Size = new System.Drawing.Size(61, 20);
@@ -122,7 +127,7 @@
             // lbl_tag
             // 
             this.lbl_tag.AutoSize = true;
-            this.lbl_tag.Location = new System.Drawing.Point(12, 9);
+            this.lbl_tag.Location = new System.Drawing.Point(40, 8);
             this.lbl_tag.Name = "lbl_tag";
             this.lbl_tag.Size = new System.Drawing.Size(29, 13);
             this.lbl_tag.TabIndex = 1;
@@ -131,7 +136,7 @@
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
-            this.lbl_name.Location = new System.Drawing.Point(12, 35);
+            this.lbl_name.Location = new System.Drawing.Point(32, 32);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(35, 13);
             this.lbl_name.TabIndex = 3;
@@ -139,7 +144,7 @@
             // 
             // TB_Name
             // 
-            this.TB_Name.Location = new System.Drawing.Point(77, 32);
+            this.TB_Name.Location = new System.Drawing.Point(80, 32);
             this.TB_Name.MaxLength = 100;
             this.TB_Name.Name = "TB_Name";
             this.TB_Name.Size = new System.Drawing.Size(147, 20);
@@ -148,7 +153,7 @@
             // 
             // BTN_Submit
             // 
-            this.BTN_Submit.Location = new System.Drawing.Point(12, 484);
+            this.BTN_Submit.Location = new System.Drawing.Point(16, 536);
             this.BTN_Submit.Name = "BTN_Submit";
             this.BTN_Submit.Size = new System.Drawing.Size(75, 23);
             this.BTN_Submit.TabIndex = 21;
@@ -159,7 +164,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 61);
+            this.label1.Location = new System.Drawing.Point(24, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 8;
@@ -167,7 +172,7 @@
             // 
             // TB_Adj
             // 
-            this.TB_Adj.Location = new System.Drawing.Point(77, 58);
+            this.TB_Adj.Location = new System.Drawing.Point(80, 56);
             this.TB_Adj.MaxLength = 100;
             this.TB_Adj.Name = "TB_Adj";
             this.TB_Adj.Size = new System.Drawing.Size(147, 20);
@@ -176,17 +181,18 @@
             // 
             // BTN_ideologies
             // 
-            this.BTN_ideologies.Location = new System.Drawing.Point(470, 55);
+            this.BTN_ideologies.BackColor = System.Drawing.Color.OrangeRed;
+            this.BTN_ideologies.Location = new System.Drawing.Point(472, 64);
             this.BTN_ideologies.Name = "BTN_ideologies";
             this.BTN_ideologies.Size = new System.Drawing.Size(27, 23);
             this.BTN_ideologies.TabIndex = 13;
             this.BTN_ideologies.Text = "..";
-            this.BTN_ideologies.UseVisualStyleBackColor = true;
+            this.BTN_ideologies.UseVisualStyleBackColor = false;
             this.BTN_ideologies.Click += new System.EventHandler(this.BTN_Ideologies_Click);
             // 
             // TB_Ideologies
             // 
-            this.TB_Ideologies.Location = new System.Drawing.Point(503, 58);
+            this.TB_Ideologies.Location = new System.Drawing.Point(504, 64);
             this.TB_Ideologies.Name = "TB_Ideologies";
             this.TB_Ideologies.ReadOnly = true;
             this.TB_Ideologies.Size = new System.Drawing.Size(236, 20);
@@ -196,13 +202,12 @@
             // 
             // OFD_Ideologies
             // 
-            this.OFD_Ideologies.FileName = "openFileDialog1";
             this.OFD_Ideologies.FileOk += new System.ComponentModel.CancelEventHandler(this.OFD_Ideologies_FileOk);
             // 
             // LBL_Ideologies
             // 
             this.LBL_Ideologies.AutoSize = true;
-            this.LBL_Ideologies.Location = new System.Drawing.Point(578, 42);
+            this.LBL_Ideologies.Location = new System.Drawing.Point(576, 48);
             this.LBL_Ideologies.Name = "LBL_Ideologies";
             this.LBL_Ideologies.Size = new System.Drawing.Size(74, 13);
             this.LBL_Ideologies.TabIndex = 11;
@@ -212,7 +217,7 @@
             // LBL_Flag
             // 
             this.LBL_Flag.AutoSize = true;
-            this.LBL_Flag.Location = new System.Drawing.Point(588, 81);
+            this.LBL_Flag.Location = new System.Drawing.Point(584, 88);
             this.LBL_Flag.Name = "LBL_Flag";
             this.LBL_Flag.Size = new System.Drawing.Size(54, 13);
             this.LBL_Flag.TabIndex = 14;
@@ -221,7 +226,7 @@
             // 
             // TB_Flag
             // 
-            this.TB_Flag.Location = new System.Drawing.Point(503, 96);
+            this.TB_Flag.Location = new System.Drawing.Point(504, 104);
             this.TB_Flag.Name = "TB_Flag";
             this.TB_Flag.ReadOnly = true;
             this.TB_Flag.Size = new System.Drawing.Size(236, 20);
@@ -232,7 +237,7 @@
             // BTN_Flag
             // 
             this.BTN_Flag.Enabled = false;
-            this.BTN_Flag.Location = new System.Drawing.Point(470, 93);
+            this.BTN_Flag.Location = new System.Drawing.Point(472, 104);
             this.BTN_Flag.Name = "BTN_Flag";
             this.BTN_Flag.Size = new System.Drawing.Size(27, 23);
             this.BTN_Flag.TabIndex = 15;
@@ -242,14 +247,13 @@
             // 
             // OFD_Flag
             // 
-            this.OFD_Flag.FileName = "openFileDialog1";
             this.OFD_Flag.FileOk += new System.ComponentModel.CancelEventHandler(this.OFD_Flag_FileOk);
             // 
             // CB_Rulingparty
             // 
             this.CB_Rulingparty.Enabled = false;
             this.CB_Rulingparty.FormattingEnabled = true;
-            this.CB_Rulingparty.Location = new System.Drawing.Point(77, 84);
+            this.CB_Rulingparty.Location = new System.Drawing.Point(80, 80);
             this.CB_Rulingparty.Name = "CB_Rulingparty";
             this.CB_Rulingparty.Size = new System.Drawing.Size(147, 21);
             this.CB_Rulingparty.TabIndex = 3;
@@ -258,7 +262,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 87);
+            this.label2.Location = new System.Drawing.Point(8, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 16;
@@ -267,7 +271,7 @@
             // TB_Pop
             // 
             this.TB_Pop.Enabled = false;
-            this.TB_Pop.Location = new System.Drawing.Point(231, 87);
+            this.TB_Pop.Location = new System.Drawing.Point(240, 80);
             this.TB_Pop.MaxLength = 3;
             this.TB_Pop.Name = "TB_Pop";
             this.TB_Pop.Size = new System.Drawing.Size(52, 20);
@@ -277,7 +281,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(230, 68);
+            this.label3.Location = new System.Drawing.Point(240, 64);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 18;
@@ -286,7 +290,7 @@
             // LBL_Locname
             // 
             this.LBL_Locname.AutoSize = true;
-            this.LBL_Locname.Location = new System.Drawing.Point(103, 108);
+            this.LBL_Locname.Location = new System.Drawing.Point(16, 104);
             this.LBL_Locname.Name = "LBL_Locname";
             this.LBL_Locname.Size = new System.Drawing.Size(83, 13);
             this.LBL_Locname.TabIndex = 19;
@@ -305,7 +309,7 @@
             // BTN_Resetloc
             // 
             this.BTN_Resetloc.Enabled = false;
-            this.BTN_Resetloc.Location = new System.Drawing.Point(289, 87);
+            this.BTN_Resetloc.Location = new System.Drawing.Point(296, 80);
             this.BTN_Resetloc.Name = "BTN_Resetloc";
             this.BTN_Resetloc.Size = new System.Drawing.Size(47, 23);
             this.BTN_Resetloc.TabIndex = 5;
@@ -320,17 +324,17 @@
             this.chart1.BorderlineWidth = 0;
             this.chart1.BorderSkin.BackColor = System.Drawing.Color.Transparent;
             this.chart1.BorderSkin.PageColor = System.Drawing.Color.Transparent;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(469, 308);
+            chartArea6.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chart1.Legends.Add(legend6);
+            this.chart1.Location = new System.Drawing.Point(464, 368);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chart1.Series.Add(series6);
             this.chart1.Size = new System.Drawing.Size(499, 199);
             this.chart1.TabIndex = 21;
             this.chart1.TabStop = false;
@@ -340,7 +344,7 @@
             // LBL_Tpop
             // 
             this.LBL_Tpop.AutoSize = true;
-            this.LBL_Tpop.Location = new System.Drawing.Point(772, 292);
+            this.LBL_Tpop.Location = new System.Drawing.Point(776, 344);
             this.LBL_Tpop.Name = "LBL_Tpop";
             this.LBL_Tpop.Size = new System.Drawing.Size(91, 13);
             this.LBL_Tpop.TabIndex = 22;
@@ -367,7 +371,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(581, 117);
+            this.label4.Location = new System.Drawing.Point(576, 128);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 13);
             this.label4.TabIndex = 27;
@@ -376,7 +380,7 @@
             // 
             // TB_History
             // 
-            this.TB_History.Location = new System.Drawing.Point(503, 133);
+            this.TB_History.Location = new System.Drawing.Point(504, 144);
             this.TB_History.Name = "TB_History";
             this.TB_History.ReadOnly = true;
             this.TB_History.Size = new System.Drawing.Size(236, 20);
@@ -386,18 +390,19 @@
             // 
             // BTN_History
             // 
-            this.BTN_History.Location = new System.Drawing.Point(470, 130);
+            this.BTN_History.BackColor = System.Drawing.Color.OrangeRed;
+            this.BTN_History.Location = new System.Drawing.Point(472, 144);
             this.BTN_History.Name = "BTN_History";
             this.BTN_History.Size = new System.Drawing.Size(27, 23);
             this.BTN_History.TabIndex = 16;
             this.BTN_History.Text = "..";
-            this.BTN_History.UseVisualStyleBackColor = true;
+            this.BTN_History.UseVisualStyleBackColor = false;
             this.BTN_History.Click += new System.EventHandler(this.BTN_History_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(568, 153);
+            this.label5.Location = new System.Drawing.Point(568, 168);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 13);
             this.label5.TabIndex = 30;
@@ -406,7 +411,7 @@
             // 
             // TB_Countrytags
             // 
-            this.TB_Countrytags.Location = new System.Drawing.Point(503, 169);
+            this.TB_Countrytags.Location = new System.Drawing.Point(504, 184);
             this.TB_Countrytags.Name = "TB_Countrytags";
             this.TB_Countrytags.ReadOnly = true;
             this.TB_Countrytags.Size = new System.Drawing.Size(236, 20);
@@ -416,23 +421,23 @@
             // 
             // BTN_Countrytags
             // 
-            this.BTN_Countrytags.Location = new System.Drawing.Point(470, 166);
+            this.BTN_Countrytags.BackColor = System.Drawing.Color.OrangeRed;
+            this.BTN_Countrytags.Location = new System.Drawing.Point(472, 184);
             this.BTN_Countrytags.Name = "BTN_Countrytags";
             this.BTN_Countrytags.Size = new System.Drawing.Size(27, 23);
             this.BTN_Countrytags.TabIndex = 17;
             this.BTN_Countrytags.Text = "..";
-            this.BTN_Countrytags.UseVisualStyleBackColor = true;
+            this.BTN_Countrytags.UseVisualStyleBackColor = false;
             this.BTN_Countrytags.Click += new System.EventHandler(this.BTN_Countrytags_Click);
             // 
             // OFD_Countrytags
             // 
-            this.OFD_Countrytags.FileName = "openFileDialog1";
             this.OFD_Countrytags.FileOk += new System.ComponentModel.CancelEventHandler(this.OFD_Countrytags_FileOk);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(593, 228);
+            this.label6.Location = new System.Drawing.Point(592, 248);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 13);
             this.label6.TabIndex = 36;
@@ -441,7 +446,7 @@
             // 
             // TB_Colors
             // 
-            this.TB_Colors.Location = new System.Drawing.Point(503, 244);
+            this.TB_Colors.Location = new System.Drawing.Point(504, 264);
             this.TB_Colors.Name = "TB_Colors";
             this.TB_Colors.ReadOnly = true;
             this.TB_Colors.Size = new System.Drawing.Size(236, 20);
@@ -451,18 +456,19 @@
             // 
             // BTN_Colors
             // 
-            this.BTN_Colors.Location = new System.Drawing.Point(470, 241);
+            this.BTN_Colors.BackColor = System.Drawing.Color.OrangeRed;
+            this.BTN_Colors.Location = new System.Drawing.Point(472, 264);
             this.BTN_Colors.Name = "BTN_Colors";
             this.BTN_Colors.Size = new System.Drawing.Size(27, 23);
             this.BTN_Colors.TabIndex = 19;
             this.BTN_Colors.Text = "..";
-            this.BTN_Colors.UseVisualStyleBackColor = true;
+            this.BTN_Colors.UseVisualStyleBackColor = false;
             this.BTN_Colors.Click += new System.EventHandler(this.BTN_Colors_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(571, 194);
+            this.label7.Location = new System.Drawing.Point(576, 208);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 13);
             this.label7.TabIndex = 33;
@@ -471,7 +477,7 @@
             // 
             // TB_Countries
             // 
-            this.TB_Countries.Location = new System.Drawing.Point(503, 208);
+            this.TB_Countries.Location = new System.Drawing.Point(504, 224);
             this.TB_Countries.Name = "TB_Countries";
             this.TB_Countries.ReadOnly = true;
             this.TB_Countries.Size = new System.Drawing.Size(236, 20);
@@ -481,27 +487,28 @@
             // 
             // BTN_Countries
             // 
-            this.BTN_Countries.Location = new System.Drawing.Point(470, 205);
+            this.BTN_Countries.BackColor = System.Drawing.Color.OrangeRed;
+            this.BTN_Countries.Location = new System.Drawing.Point(472, 224);
             this.BTN_Countries.Name = "BTN_Countries";
             this.BTN_Countries.Size = new System.Drawing.Size(27, 23);
             this.BTN_Countries.TabIndex = 18;
             this.BTN_Countries.Text = "..";
-            this.BTN_Countries.UseVisualStyleBackColor = true;
+            this.BTN_Countries.UseVisualStyleBackColor = false;
             this.BTN_Countries.Click += new System.EventHandler(this.BTN_Countries_Click);
             // 
             // OFD_Colors
             // 
-            this.OFD_Colors.FileName = "openFileDialog1";
             this.OFD_Colors.FileOk += new System.ComponentModel.CancelEventHandler(this.OFD_Colors_FileOk);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(370, 98);
+            this.checkBox1.Location = new System.Drawing.Point(376, 108);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(94, 17);
             this.checkBox1.TabIndex = 14;
             this.checkBox1.Text = "Ideology Flags";
+            this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
@@ -511,7 +518,7 @@
             // 
             // TB_R
             // 
-            this.TB_R.Location = new System.Drawing.Point(78, 190);
+            this.TB_R.Location = new System.Drawing.Point(64, 192);
             this.TB_R.MaxLength = 3;
             this.TB_R.Name = "TB_R";
             this.TB_R.Size = new System.Drawing.Size(34, 20);
@@ -521,7 +528,7 @@
             // 
             // TB_G
             // 
-            this.TB_G.Location = new System.Drawing.Point(118, 190);
+            this.TB_G.Location = new System.Drawing.Point(104, 192);
             this.TB_G.MaxLength = 3;
             this.TB_G.Name = "TB_G";
             this.TB_G.Size = new System.Drawing.Size(34, 20);
@@ -531,7 +538,7 @@
             // 
             // TB_B
             // 
-            this.TB_B.Location = new System.Drawing.Point(158, 190);
+            this.TB_B.Location = new System.Drawing.Point(144, 192);
             this.TB_B.MaxLength = 3;
             this.TB_B.Name = "TB_B";
             this.TB_B.Size = new System.Drawing.Size(34, 20);
@@ -541,7 +548,7 @@
             // 
             // BTN_Pick
             // 
-            this.BTN_Pick.Location = new System.Drawing.Point(77, 216);
+            this.BTN_Pick.Location = new System.Drawing.Point(64, 216);
             this.BTN_Pick.Name = "BTN_Pick";
             this.BTN_Pick.Size = new System.Drawing.Size(114, 20);
             this.BTN_Pick.TabIndex = 11;
@@ -552,7 +559,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(16, 193);
+            this.label8.Location = new System.Drawing.Point(24, 192);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(31, 13);
             this.label8.TabIndex = 43;
@@ -561,7 +568,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(81, 175);
+            this.label9.Location = new System.Drawing.Point(64, 176);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(27, 13);
             this.label9.TabIndex = 44;
@@ -570,7 +577,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(117, 175);
+            this.label10.Location = new System.Drawing.Point(104, 176);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(36, 13);
             this.label10.TabIndex = 45;
@@ -579,7 +586,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(161, 175);
+            this.label11.Location = new System.Drawing.Point(152, 176);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(28, 13);
             this.label11.TabIndex = 46;
@@ -591,7 +598,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(745, 55);
+            this.button1.Location = new System.Drawing.Point(744, 64);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(21, 23);
             this.button1.TabIndex = 47;
@@ -602,7 +609,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(745, 94);
+            this.button2.Location = new System.Drawing.Point(744, 104);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(21, 23);
             this.button2.TabIndex = 48;
@@ -613,7 +620,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(745, 131);
+            this.button3.Location = new System.Drawing.Point(744, 144);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(21, 23);
             this.button3.TabIndex = 49;
@@ -624,7 +631,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(745, 166);
+            this.button4.Location = new System.Drawing.Point(744, 184);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(21, 23);
             this.button4.TabIndex = 50;
@@ -635,7 +642,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(745, 206);
+            this.button5.Location = new System.Drawing.Point(744, 224);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(21, 23);
             this.button5.TabIndex = 51;
@@ -646,7 +653,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(745, 241);
+            this.button6.Location = new System.Drawing.Point(744, 264);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(21, 23);
             this.button6.TabIndex = 52;
@@ -657,7 +664,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(745, 19);
+            this.button7.Location = new System.Drawing.Point(744, 24);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(21, 23);
             this.button7.TabIndex = 56;
@@ -669,7 +676,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(588, 6);
+            this.label12.Location = new System.Drawing.Point(584, 8);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(60, 13);
             this.label12.TabIndex = 55;
@@ -678,7 +685,7 @@
             // 
             // TB_Modfolder
             // 
-            this.TB_Modfolder.Location = new System.Drawing.Point(503, 22);
+            this.TB_Modfolder.Location = new System.Drawing.Point(504, 24);
             this.TB_Modfolder.Name = "TB_Modfolder";
             this.TB_Modfolder.ReadOnly = true;
             this.TB_Modfolder.Size = new System.Drawing.Size(236, 20);
@@ -687,12 +694,14 @@
             // 
             // BTN_Modfolder
             // 
-            this.BTN_Modfolder.Location = new System.Drawing.Point(470, 19);
+            this.BTN_Modfolder.BackColor = System.Drawing.SystemColors.Control;
+            this.BTN_Modfolder.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BTN_Modfolder.Location = new System.Drawing.Point(472, 24);
             this.BTN_Modfolder.Name = "BTN_Modfolder";
             this.BTN_Modfolder.Size = new System.Drawing.Size(27, 23);
             this.BTN_Modfolder.TabIndex = 12;
             this.BTN_Modfolder.Text = "..";
-            this.BTN_Modfolder.UseVisualStyleBackColor = true;
+            this.BTN_Modfolder.UseVisualStyleBackColor = false;
             this.BTN_Modfolder.Click += new System.EventHandler(this.BTN_Modfolder_Click);
             // 
             // FBD_Modfolder
@@ -703,9 +712,9 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(289, 122);
+            this.button8.Location = new System.Drawing.Point(288, 124);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(21, 23);
+            this.button8.Size = new System.Drawing.Size(20, 20);
             this.button8.TabIndex = 57;
             this.button8.TabStop = false;
             this.button8.Text = "?";
@@ -715,7 +724,7 @@
             // BTN_Rnd
             // 
             this.BTN_Rnd.Enabled = false;
-            this.BTN_Rnd.Location = new System.Drawing.Point(920, 279);
+            this.BTN_Rnd.Location = new System.Drawing.Point(920, 336);
             this.BTN_Rnd.Name = "BTN_Rnd";
             this.BTN_Rnd.Size = new System.Drawing.Size(48, 23);
             this.BTN_Rnd.TabIndex = 58;
@@ -727,7 +736,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(745, 279);
+            this.button9.Location = new System.Drawing.Point(744, 304);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(21, 23);
             this.button9.TabIndex = 62;
@@ -739,7 +748,7 @@
             // LBL_Loc
             // 
             this.LBL_Loc.AutoSize = true;
-            this.LBL_Loc.Location = new System.Drawing.Point(575, 266);
+            this.LBL_Loc.Location = new System.Drawing.Point(576, 288);
             this.LBL_Loc.Name = "LBL_Loc";
             this.LBL_Loc.Size = new System.Drawing.Size(82, 13);
             this.LBL_Loc.TabIndex = 61;
@@ -748,7 +757,7 @@
             // 
             // TB_Loc
             // 
-            this.TB_Loc.Location = new System.Drawing.Point(503, 282);
+            this.TB_Loc.Location = new System.Drawing.Point(504, 304);
             this.TB_Loc.Name = "TB_Loc";
             this.TB_Loc.ReadOnly = true;
             this.TB_Loc.Size = new System.Drawing.Size(236, 20);
@@ -758,22 +767,22 @@
             // 
             // BTN_Loc
             // 
-            this.BTN_Loc.Location = new System.Drawing.Point(470, 279);
+            this.BTN_Loc.BackColor = System.Drawing.Color.OrangeRed;
+            this.BTN_Loc.Location = new System.Drawing.Point(472, 304);
             this.BTN_Loc.Name = "BTN_Loc";
             this.BTN_Loc.Size = new System.Drawing.Size(27, 23);
             this.BTN_Loc.TabIndex = 20;
             this.BTN_Loc.Text = "..";
-            this.BTN_Loc.UseVisualStyleBackColor = true;
+            this.BTN_Loc.UseVisualStyleBackColor = false;
             this.BTN_Loc.Click += new System.EventHandler(this.BTN_Loc_Click);
             // 
             // OFD_Loc
             // 
-            this.OFD_Loc.FileName = "openFileDialog1";
             this.OFD_Loc.FileOk += new System.ComponentModel.CancelEventHandler(this.OFD_Loc_FileOk);
             // 
             // BTN_Update
             // 
-            this.BTN_Update.Location = new System.Drawing.Point(386, 489);
+            this.BTN_Update.Location = new System.Drawing.Point(384, 544);
             this.BTN_Update.Name = "BTN_Update";
             this.BTN_Update.Size = new System.Drawing.Size(75, 23);
             this.BTN_Update.TabIndex = 63;
@@ -785,7 +794,7 @@
             // 
             this.LBL_Version.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LBL_Version.AutoSize = true;
-            this.LBL_Version.Location = new System.Drawing.Point(242, 494);
+            this.LBL_Version.Location = new System.Drawing.Point(240, 552);
             this.LBL_Version.Name = "LBL_Version";
             this.LBL_Version.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.LBL_Version.Size = new System.Drawing.Size(138, 13);
@@ -796,7 +805,7 @@
             // CB_ForceUpdate
             // 
             this.CB_ForceUpdate.AutoSize = true;
-            this.CB_ForceUpdate.Location = new System.Drawing.Point(370, 466);
+            this.CB_ForceUpdate.Location = new System.Drawing.Point(368, 520);
             this.CB_ForceUpdate.Name = "CB_ForceUpdate";
             this.CB_ForceUpdate.Size = new System.Drawing.Size(91, 17);
             this.CB_ForceUpdate.TabIndex = 65;
@@ -812,12 +821,63 @@
             this.PB_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PB_Logo.TabIndex = 66;
             this.PB_Logo.TabStop = false;
+            this.PB_Logo.Click += new System.EventHandler(this.PB_Logo_Click);
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(744, 344);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(21, 23);
+            this.button10.TabIndex = 70;
+            this.button10.TabStop = false;
+            this.button10.Text = "?";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // LBL_HistoryFile
+            // 
+            this.LBL_HistoryFile.AutoSize = true;
+            this.LBL_HistoryFile.Location = new System.Drawing.Point(584, 328);
+            this.LBL_HistoryFile.Name = "LBL_HistoryFile";
+            this.LBL_HistoryFile.Size = new System.Drawing.Size(58, 13);
+            this.LBL_HistoryFile.TabIndex = 69;
+            this.LBL_HistoryFile.Text = "History File";
+            this.LBL_HistoryFile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TB_HistoryFile
+            // 
+            this.TB_HistoryFile.Location = new System.Drawing.Point(504, 344);
+            this.TB_HistoryFile.Name = "TB_HistoryFile";
+            this.TB_HistoryFile.ReadOnly = true;
+            this.TB_HistoryFile.Size = new System.Drawing.Size(236, 20);
+            this.TB_HistoryFile.TabIndex = 68;
+            this.TB_HistoryFile.TabStop = false;
+            this.TB_HistoryFile.Text = "GENERICHISTORY.TXT";
+            // 
+            // BTN_HistoryFile
+            // 
+            this.BTN_HistoryFile.BackColor = System.Drawing.Color.OrangeRed;
+            this.BTN_HistoryFile.Location = new System.Drawing.Point(472, 344);
+            this.BTN_HistoryFile.Name = "BTN_HistoryFile";
+            this.BTN_HistoryFile.Size = new System.Drawing.Size(27, 23);
+            this.BTN_HistoryFile.TabIndex = 67;
+            this.BTN_HistoryFile.Text = "..";
+            this.BTN_HistoryFile.UseVisualStyleBackColor = false;
+            this.BTN_HistoryFile.Click += new System.EventHandler(this.BTN_HistoryFile_Click);
+            // 
+            // OFD_HistoryFile
+            // 
+            this.OFD_HistoryFile.FileOk += new System.ComponentModel.CancelEventHandler(this.OFD_HistoryFile_FileOk);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 519);
+            this.ClientSize = new System.Drawing.Size(980, 578);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.LBL_HistoryFile);
+            this.Controls.Add(this.TB_HistoryFile);
+            this.Controls.Add(this.BTN_HistoryFile);
             this.Controls.Add(this.PB_Logo);
             this.Controls.Add(this.CB_ForceUpdate);
             this.Controls.Add(this.LBL_Version);
@@ -885,7 +945,7 @@
             this.Controls.Add(this.TB_Tag);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
-            this.Text = "HOI Country Generator";
+            this.Text = "HOI4 Country Generator";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Logo)).EndInit();
@@ -971,6 +1031,11 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.CheckBox CB_ForceUpdate;
         private System.Windows.Forms.PictureBox PB_Logo;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Label LBL_HistoryFile;
+        private System.Windows.Forms.TextBox TB_HistoryFile;
+        private System.Windows.Forms.Button BTN_HistoryFile;
+        private System.Windows.Forms.OpenFileDialog OFD_HistoryFile;
     }
 }
 

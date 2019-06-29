@@ -32,6 +32,9 @@ namespace HOICountryGenerator
         public string colorG;
         public string colorB;
         public bool versionNag = true;
+
+        public string historyFileDir;
+
         public Form1()
         {
             InitializeComponent();
@@ -43,17 +46,18 @@ namespace HOICountryGenerator
             int tpop = 0;
             if (ideologyDir == ""|ideologyDir == null)
                 return;
-            StreamReader sr = new StreamReader(ideologyDir);
+            StreamReader sr = new StreamReader(ideologyDir, true);
             string ideTxt = sr.ReadToEnd();
             ideologyNames.Clear();
             ideologies.Clear();
-            string[] lines = ideTxt.Split('\n');
+            string[] lines = ideTxt.Replace('\r', '\n').Split('\n');
             if (resetVals)
                 idePop.Clear();
             List<string> _lines = new List<string>();
             foreach (string line in lines)
             {
-                _lines.Add(line.Replace("\n", string.Empty));
+                if (line != string.Empty &&line!="\n")
+                    _lines.Add(line);//.Replace("\n", string.Empty));
             }
             lines = _lines.ToArray();
             int miniIdeCount = 0;
@@ -63,7 +67,7 @@ namespace HOICountryGenerator
                 {
                     ideologies.Add(line.Split('|')[0]);
                     if(line!=lines.Last())
-                        ideologyNames.Add(line.Split('|')[1].Remove(line.Split('|')[1].Length-1,1));
+                        ideologyNames.Add(line.Split('|')[1]);
                     else
                         ideologyNames.Add(line.Split('|')[1]);
                     if (resetVals)
@@ -88,10 +92,11 @@ namespace HOICountryGenerator
             List<string> _idenames = new List<string>();
             foreach (string name in ideologyNames)
             {
+
                 string tempname;
                 tempname = name.Replace("[NAME]", countryName);
                 tempname = tempname.Replace("[ADJ]", countryAdjective);
-                tempname.Replace("\n", "");
+                //tempname.Replace("\n", "");
                 _idenames.Add(tempname);
             }
             ideologyNames = _idenames;
@@ -183,7 +188,7 @@ namespace HOICountryGenerator
             string dir;
             dir = FBD_History.SelectedPath;
             //File.Copy("GENERICHISTORY.txt", dir + countryTag + " - " + countryName+".txt");
-            string txt = File.ReadAllText("GENERICHISTORY.txt");
+            string txt = File.ReadAllText(historyFileDir);
             txt = txt.Replace("[NAME]", countryName);
             //MessageBox.Show(txt);
             txt = txt.Replace("[TAG]", countryTag);
@@ -198,7 +203,7 @@ namespace HOICountryGenerator
             int count = 0;
             foreach (string party in ideologies)
             {
-                parties += "        "+party + " = { popularity = " + idePop[count] + " }\n";
+                parties += "        "+party + " = " + idePop[count] + "\r\n";
                     count += 1;
             }
             txt = txt.Replace("[PARTIES]", parties);
@@ -259,7 +264,7 @@ namespace HOICountryGenerator
 
         private void OFD_Ideologies_FileOk(object sender, CancelEventArgs e)
         {
-            
+            BTN_ideologies.BackColor = Color.LimeGreen;
             TB_Ideologies.Text = OFD_Ideologies.FileName;
             ideologyDir = OFD_Ideologies.FileName;
             TB_Pop.Enabled = true;
@@ -278,6 +283,7 @@ namespace HOICountryGenerator
 
         private void OFD_Flag_FileOk(object sender, CancelEventArgs e)
         {
+            BTN_Flag.BackColor = Color.LimeGreen;
             TB_Flag.Text = OFD_Flag.FileName;
             flagDir = OFD_Flag.FileName;
             
@@ -375,7 +381,13 @@ namespace HOICountryGenerator
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            colorR = "150";
+            if (File.Exists(Application.StartupPath + "/GENERICHISTORY.txt"))
+            {
+                TB_HistoryFile.Text = Application.StartupPath + "/GENERICHISTORY.txt";
+                historyFileDir = Application.StartupPath + "/GENERICHISTORY.txt";
+                BTN_HistoryFile.BackColor = Color.LimeGreen;
+            }
+                colorR = "150";
             colorG = "150";
             colorB = "150";
             System.Threading.Timer timer = null;
@@ -398,14 +410,18 @@ namespace HOICountryGenerator
 
         private void OFD_History_FileOk(object sender, CancelEventArgs e)
         {
+            BTN_History.BackColor = Color.LimeGreen;
             TB_History.Text = FBD_History.SelectedPath;
         }
 
         private void BTN_History_Click(object sender, EventArgs e)
         {
             FBD_History.SelectedPath = FBD_Modfolder.SelectedPath;
-            if (FBD_History.ShowDialog().ToString()!="Cancel")
+            if (FBD_History.ShowDialog().ToString() != "Cancel")
+            {
                 TB_History.Text = FBD_History.SelectedPath;
+                BTN_History.BackColor = Color.LimeGreen;
+            }
             //else
                 //TB_History.Text = "";
         }
@@ -423,6 +439,7 @@ namespace HOICountryGenerator
 
         private void OFD_Countrytags_FileOk(object sender, CancelEventArgs e)
         {
+            BTN_Countrytags.BackColor = Color.LimeGreen;
             TB_Countrytags.Text = OFD_Countrytags.FileName;
         }
 
@@ -430,7 +447,10 @@ namespace HOICountryGenerator
         {
             FBD_Countries.SelectedPath = FBD_Modfolder.SelectedPath;
             if (FBD_Countries.ShowDialog().ToString() != "Cancel")
+            {
                 TB_Countries.Text = FBD_Countries.SelectedPath;
+                BTN_Countries.BackColor = Color.LimeGreen;
+            }
         }
 
         private void BTN_Colors_Click(object sender, EventArgs e)
@@ -442,6 +462,7 @@ namespace HOICountryGenerator
 
         private void OFD_Colors_FileOk(object sender, CancelEventArgs e)
         {
+            BTN_Colors.BackColor = Color.LimeGreen;
             TB_Colors.Text = OFD_Colors.FileName;
         }
 
@@ -503,7 +524,7 @@ namespace HOICountryGenerator
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Help("History Folder Help", "When a history file is generated for your nation from GENERICHISTORY.txt, the file will be sent to this destination.");
+            Help("History Folder Help", "When a history file is generated for your nation from GENERICHISTORY.txt (or your own custom history file), the file will be sent to this destination.");
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -552,30 +573,35 @@ namespace HOICountryGenerator
                     MessageBox.Show("history/countries detected", "File autodetect");
                     FBD_History.SelectedPath = modloc + "/history/countries";
                     TB_History.Text = FBD_History.SelectedPath;
+                    BTN_History.BackColor = Color.LimeGreen;
                 }
                 if (File.Exists(modloc + "/common/country_tags/00_countries.txt"))
                 {
                     MessageBox.Show("country_tags/00_countries.txt detected", "File autodetect");
                     OFD_Countrytags.FileName = modloc + "/common/country_tags/00_countries.txt";
                     TB_Countrytags.Text = OFD_Countrytags.FileName;
+                    BTN_Countrytags.BackColor = Color.LimeGreen;
                 }
                 if (Directory.Exists(modloc + "/common/countries"))
                 {
                     MessageBox.Show("common/countries detected", "File autodetect");
                     FBD_Countries.SelectedPath = modloc + "/common/countries";
                     TB_Countries.Text = FBD_Countries.SelectedPath;
+                    BTN_Countries.BackColor = Color.LimeGreen;
                 }
                 if (File.Exists(modloc + "/common/countries/colors.txt"))
                 {
                     MessageBox.Show("colors.txt detected", "File autodetect");
                     OFD_Colors.FileName = modloc + "/common/countries/colors.txt";
                     TB_Colors.Text = OFD_Colors.FileName;
+                    BTN_Colors.BackColor = Color.LimeGreen;
                 }
                 if (File.Exists(modloc + "/localisation/countries_l_english.yml"))
                 {
                     MessageBox.Show("country localisation detected", "File autodetect");
                     OFD_Loc.FileName = modloc + "/localisation/countries_l_english.yml";
                     TB_Loc.Text = OFD_Loc.FileName;
+                    BTN_Loc.BackColor = Color.LimeGreen;
                 }
             }
 
@@ -638,6 +664,7 @@ namespace HOICountryGenerator
 
         private void OFD_Loc_FileOk(object sender, CancelEventArgs e)
         {
+            BTN_Loc.BackColor = Color.LimeGreen;
             TB_Loc.Text = OFD_Loc.FileName;
         }
 
@@ -732,6 +759,29 @@ namespace HOICountryGenerator
                     BTN_Update.Enabled = false;
                 }
             }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Help("HistoryFile Help", "This option is by default set to DEFAULTHISTORY.txt, and can be used to set custom modded history files for use in overhaul mods.");
+        }
+
+        private void BTN_HistoryFile_Click(object sender, EventArgs e)
+        {
+            OFD_HistoryFile.InitialDirectory = Application.StartupPath; ;
+            OFD_HistoryFile.ShowDialog();
+        }
+
+        private void OFD_HistoryFile_FileOk(object sender, CancelEventArgs e)
+        {
+            BTN_HistoryFile.BackColor = Color.LimeGreen;
+            TB_HistoryFile.Text = OFD_HistoryFile.FileName;
+            historyFileDir = OFD_HistoryFile.FileName;
+        }
+
+        private void PB_Logo_Click(object sender, EventArgs e)
+        {
+
         }
 
 

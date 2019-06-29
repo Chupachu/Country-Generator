@@ -34,6 +34,8 @@ namespace HCG_Updater
             WebClient main = new WebClient();
             main.DownloadFile("https://github.com/Chupachu/Country-Generator/blob/master/CountryGenerator/HOICountryGenerator.exe?raw=true", "HOICountryGenerator.exe");
             new WebClient().DownloadFile("https://raw.githubusercontent.com/Chupachu/Country-Generator/master/CountryGenerator/version.txt", "version.txt");
+            new WebClient().DownloadFile("https://raw.githubusercontent.com/Chupachu/Country-Generator/master/CountryGenerator/GENERICHISTORY.txt", "GENERICHISTORY.txt");
+            new WebClient().DownloadFile("https://raw.githubusercontent.com/Chupachu/Country-Generator/master/CountryGenerator/ideologies.txt", "ideologies.txt");
             new WebClient().DownloadFile("https://raw.githubusercontent.com/Chupachu/Country-Generator/master/CountryGenerator/changelog.txt", "changelog.txt");
             System.Threading.Timer timer = null;
             //timer = new System.Threading.Timer((obj) => { MessageBox.Show("(Version: ) There's a new version available:", "Update Available"); timer.Dispose(); }, null, 500, System.Threading.Timeout.Infinite);
