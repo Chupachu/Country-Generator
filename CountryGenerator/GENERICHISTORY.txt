@@ -62,7 +62,7 @@ set_technology = {
 set_convoys = 10
 
 set_popularities = {
-	[PARTIES]
+[PARTIES]
 }
 
 set_politics = {
